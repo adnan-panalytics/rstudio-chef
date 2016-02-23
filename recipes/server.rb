@@ -43,6 +43,12 @@ service "rstudio-server" do
     action :start
 end
 
+directory "/etc/rstudio" do
+    owner "root"
+    group "root"
+    recursive true
+end
+
 template "/etc/rstudio/rserver.conf" do
     source "etc/rstudio/rserver.conf.erb"
     mode 0644
