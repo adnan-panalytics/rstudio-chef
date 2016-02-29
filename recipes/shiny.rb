@@ -58,7 +58,7 @@ template "/etc/shiny-server/shiny-server.conf" do
   mode "0644"
   owner "root"
   group "root"
-  notifies :reload, "service[shiny-server]"
+  notifies :restart, "service[shiny-server]"
 end
 
 if node['rstudio']['shiny']['htpasswd_file'] != ''
